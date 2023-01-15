@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Digital Clock with Glowing color effects</title>
+  <link rel="stylesheet" href="./main.css" />
+ </head>
+ <body>
+   <div class="wrapper">
+      <div class="display">
+       <div id="time"></div>
+            
+      </div>
+   </div>
+ 
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+  $(document).ready(function(){
+   
+   setInterval(()=>{  const time =  document.querySelector("#time");
+   let date= new Date();
+   let hours= date.getHours();
+   let minutes= date.getMinutes();
+   let seconds= date.getSeconds();
+   let day_aar="AM";
+   if(hours>12){
+    hours=hours-12;
+    day_aar="PM";
+   }
+   if(hours<10){
+    hours="0"+hours;
+   }
+   if(minutes<10){
+    minutes="0"+minutes;
+   }
+   if(seconds<10){
+    seconds="0"+seconds;
+   }
+ $("#time").html(hours+":"+minutes+":"+seconds+" "+ day_aar);
+ });
+ //alert(date);
+  });
+ </script>
+ </body>
+</html>
